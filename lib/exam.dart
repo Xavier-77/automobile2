@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'courses.dart';
 import 'firstExam.dart';
 import 'secondExam.dart';
 import 'thirdExam.dart';
@@ -16,22 +17,27 @@ class _ExamPageState extends State<ExamPage> {
   // Les pages correspondantes aux éléments de la barre de navigation
   final List<Widget> _pages = [
     WelcomePage(), // Vous pouvez remplacer MyHomePage par la page que vous souhaitez afficher
-    LoginPage(),
-    PrivacyPolicyPage(),
+    ApprentissagePage(),
+    ExamPage(),
   ];
 
   void _onItemTapped(int index) {
     if (index == 0) {
-      // L'utilisateur a cliqué sur "Politique de confidentialité"
+      // L'utilisateur a cliqué sur "Examens"
       Navigator.of(context).push(MaterialPageRoute(
         builder: (context) => WelcomePage(),
       ));
-    } else if (index == 2) {
+    }
+    else if (index == 1){
+      Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => ApprentissagePage(),
+      ));
+    }
+    else if (index == 2) {
       // L'utilisateur a cliqué sur "Accueil"
       Navigator.of(context).push(MaterialPageRoute(
-        builder: (context) =>  PrivacyPolicyPage(),
-      ));
-    }else {
+        builder: (context) =>  ExamPage(),
+      ));}else {
       setState(() {
         _selectedIndex = index;
       });
@@ -166,11 +172,11 @@ class _ExamPageState extends State<ExamPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.school),
-            label: 'Nos autoecoles',
+            label: 'Apprentissage',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.policy),
-            label: 'Politique de confidentialité',
+            label: 'Examens',
           ),
         ],
         currentIndex: _selectedIndex,

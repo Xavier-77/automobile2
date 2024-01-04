@@ -126,11 +126,11 @@ class _LoginPageState extends State<LoginPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.school),
-            label: 'Nos auto-écoles',
+            label: 'Apprentissage',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.policy),
-            label: 'Politique de confidentialité',
+            label: 'Examens',
           ),
         ],
         currentIndex: _selectedIndex,

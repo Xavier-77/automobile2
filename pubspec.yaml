@@ -11,6 +11,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  get:
+  firebase_core: ^2.0.0
+  firebase_auth: ^4.5.0
 
   english_words: ^4.0.0
   provider: ^6.0.0
@@ -25,3 +28,5 @@ flutter:
   uses-material-design: true
   assets:
     - assets/image.jpg
+    - assets/voiture.png
+    - assets/logo.png

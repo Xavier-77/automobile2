@@ -1,4 +1,8 @@
+import 'package:automobile/Views/RegisterView.dart';
+import 'package:automobile/courses.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'privacyPolitique.dart';
 import 'login_page.dart';
 
@@ -13,17 +17,23 @@ class _WelcomePageState extends State<WelcomePage> {
   // Les pages correspondantes aux éléments de la barre de navigation
   final List<Widget> _pages = [
     WelcomePage(), // Vous pouvez remplacer MyHomePage par la page que vous souhaitez afficher
-    LoginPage(),
+    RegisterView(),
     PrivacyPolicyPage(),
   ];
 
   void _onItemTapped(int index) {
     if (index == 0) {
-      // L'utilisateur a cliqué sur "Politique de confidentialité"
+      // L'utilisateur a cliqué sur "Examens"
       Navigator.of(context).push(MaterialPageRoute(
         builder: (context) => WelcomePage(),
       ));
-    } else if (index == 2) {
+    }
+    else if (index == 1){
+      Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => ApprentissagePage(),
+      ));
+    }
+    else if (index == 2) {
       // L'utilisateur a cliqué sur "Accueil"
       Navigator.of(context).push(MaterialPageRoute(
         builder: (context) =>  PrivacyPolicyPage(),
@@ -38,6 +48,7 @@ class _WelcomePageState extends State<WelcomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+
         title: Text('ZAMSE WEFO'),
         centerTitle: true,
       ),
@@ -97,11 +108,11 @@ class _WelcomePageState extends State<WelcomePage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.school),
-            label: 'Nos autoecoles',
+            label: 'Apprentissage',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.policy),
-            label: 'Politique de confidentialité',
+            label: 'Examens',
           ),
         ],
         currentIndex: _selectedIndex,
@@ -112,8 +123,4 @@ class _WelcomePageState extends State<WelcomePage> {
   }
 }
 
-void main() {
-  runApp(MaterialApp(
-    home: WelcomePage(),
-  ));
-}
+

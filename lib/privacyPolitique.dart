@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'courses.dart';
+import 'exam.dart';
 import 'signup_page.dart';
 import 'main.dart';
 import 'login_page.dart';
@@ -16,22 +18,27 @@ class _PrivacyPolicyPageState extends State<PrivacyPolicyPage> {
   // Les pages correspondantes aux éléments de la barre de navigation
   final List<Widget> _pages = [
     WelcomePage(), // Vous pouvez remplacer MyHomePage par la page que vous souhaitez afficher
-    LoginPage(),
-    PrivacyPolicyPage(),
+    ApprentissagePage(),
+    ExamPage(),
   ];
 
   void _onItemTapped(int index) {
     if (index == 0) {
-      // L'utilisateur a cliqué sur "Politique de confidentialité"
+      // L'utilisateur a cliqué sur "Examens"
       Navigator.of(context).push(MaterialPageRoute(
         builder: (context) => WelcomePage(),
       ));
-    } else if (index == 2) {
+    }
+    else if (index == 1){
+      Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => ApprentissagePage(),
+      ));
+    }
+    else if (index == 2) {
       // L'utilisateur a cliqué sur "Accueil"
       Navigator.of(context).push(MaterialPageRoute(
-        builder: (context) =>  PrivacyPolicyPage(),
-      ));
-    }else {
+        builder: (context) =>  ExamPage(),
+      ));}else {
       setState(() {
         _selectedIndex = index;
       });
@@ -56,7 +63,7 @@ class _PrivacyPolicyPageState extends State<PrivacyPolicyPage> {
         child: Column(
           children: [
             Text(
-              'Notre politique de confidentialité!',
+              'Notre Examens!',
               style: TextStyle(
                 fontSize: 18.0,
                 fontWeight: FontWeight.bold,
@@ -94,9 +101,9 @@ class _PrivacyPolicyPageState extends State<PrivacyPolicyPage> {
                 ElevatedButton(
                   onPressed: () {
                     // Logique pour le bouton "Annuler"
-                    Navigator.of(context).push(MaterialPageRoute(
+                   /* Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => MyHomePage(),
-                    ));
+                    ));*/
                   },
                   style: ElevatedButton.styleFrom(
                         backgroundColor: Color.fromARGB(255, 255, 0, 0), // Fond rouge foncé
@@ -148,11 +155,11 @@ class _PrivacyPolicyPageState extends State<PrivacyPolicyPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.school),
-            label: 'Nos autoecoles',
+            label: 'Apprentissage',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.policy),
-            label: 'Politique de confidentialité',
+            label: 'Examens',
           ),
         ],
         currentIndex: _selectedIndex,

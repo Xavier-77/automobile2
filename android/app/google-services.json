@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "221882321870",
+    "project_id": "zamse-weefo",
+    "storage_bucket": "zamse-weefo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:221882321870:android:3260f724df4153acba799f",
+        "android_client_info": {
+          "package_name": "com.example.automobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_ZJ3MbfZHmkBhlEGZRGZvwsq73nu4edA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

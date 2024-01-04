@@ -109,11 +109,11 @@ class _SignUpPageState extends State<SignUpPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.school),
-            label: 'Nos autoecoles',
+            label: 'Apprentissage',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.policy),
-            label: 'Politique de confidentialité',
+            label: 'Examens',
           ),
         ],
         currentIndex: _selectedIndex,
